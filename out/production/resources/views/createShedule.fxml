@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="540.0" prefWidth="743.0" style="-fx-background-color: #FCFDFD;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.isu.math.zvereva.Controllers.CreateSheduleController">
+   <children>
+      <ComboBox fx:id="day" layoutX="32.0" layoutY="137.0" onAction="#dayClick" prefHeight="30.0" prefWidth="211.0" promptText="Понедельник" />
+      <Pane layoutX="-1.0" layoutY="-6.0" prefHeight="100.0" prefWidth="743.0" style="-fx-background-color: #E1F2FD;" AnchorPane.bottomAnchor="446.0">
+         <children>
+            <Button fx:id="createScheme" layoutX="68.0" layoutY="24.0" mnemonicParsing="false" onAction="#createSchemeClick" prefHeight="52.0" prefWidth="140.0" style="-fx-background-color: #008ae6;" text="Создать схему" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteScheme" layoutX="292.0" layoutY="23.0" mnemonicParsing="false" onAction="#deleteSchemeClick" prefHeight="52.0" prefWidth="140.0" style="-fx-background-color: #008ae6;" text="Удалить схему" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="changeScheme" layoutX="517.0" layoutY="23.0" mnemonicParsing="false" onAction="#changeSchemeClick" prefHeight="52.0" prefWidth="184.0" style="-fx-background-color: #008ae6;" text="Редактировать схему" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TableView layoutX="70.0" layoutY="203.0" prefHeight="261.0" prefWidth="608.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+        <columns>
+          <TableColumn prefWidth="304.0" text="Схема расписания" />
+          <TableColumn prefWidth="303.0" text="Дата редактирования" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
