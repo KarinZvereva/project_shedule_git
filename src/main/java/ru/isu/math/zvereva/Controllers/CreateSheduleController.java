@@ -14,16 +14,31 @@ public class CreateSheduleController {
     private Button createScheme;
 
     @FXML
-    private Button deleteScheme;
+    private TableView<?> scheme;
 
     @FXML
     private Button changeScheme;
 
     @FXML
-    private TableView<?> scheme;
+    private Button deleteScheme;
 
     @FXML
     void changeSchemeClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void createSchemeClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void dayClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void deleteSchemeClick(ActionEvent event) {
 
     }
 }

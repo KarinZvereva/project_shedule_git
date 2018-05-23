@@ -30,7 +30,6 @@ public class MainController {
                 l = true;
                 break;
             case "teacher":
-                System.out.println("teacher");
                 item = "views/teacherdashboard.fxml";
                 l = true;
                 break;
