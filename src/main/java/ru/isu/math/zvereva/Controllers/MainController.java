@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class MainController {
@@ -48,7 +49,11 @@ public class MainController {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(item));
             stage.setTitle("Shedule");
-            stage.setScene(new Scene(root, 1031, 791));
+
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            double width = screenSize.width;
+            double height = screenSize.getHeight();
+            stage.setScene(new Scene(root, width-10, height-80));
             stage.show();
         }
     }

@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="791.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.isu.math.zvereva.Controllers.SheduleController">
+<AnchorPane prefHeight="791.0" prefWidth="953.0" style="-fx-background-color: #FCFDFD;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.isu.math.zvereva.Controllers.SheduleController">
    <children>
       <Button fx:id="createShedule" layoutX="703.0" layoutY="39.0" mnemonicParsing="false" onAction="#createSheduleClick" prefHeight="55.0" prefWidth="199.0" style="-fx-background-color: #008ae6;" text="Создать расписание" textFill="WHITE" AnchorPane.rightAnchor="51.0">
          <font>
