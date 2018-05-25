@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -33,6 +34,15 @@ public class AdmindashboardController {
     private Button users;
 
     @FXML
+    private Button createShedule;
+
+    @FXML
+    private TabPane sheduleWeek;
+
+    @FXML
+    private Button classes;
+
+    @FXML
     void buttonExitClick(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/main.fxml"));
@@ -41,6 +51,18 @@ public class AdmindashboardController {
         stage.show();
         Stage stag = (Stage) exit.getScene().getWindow();
         stag.close();
+    }
+
+    @FXML
+    void classesClick(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/classes.fxml"));
+        stage.setTitle("Classes");
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.width;
+        double height = screenSize.getHeight();
+        stage.setScene(new Scene(root, width-1, height-80));
+        stage.show();
     }
 
     @FXML
@@ -69,8 +91,15 @@ public class AdmindashboardController {
     }
 
     @FXML
-    void subjectClick(ActionEvent event) {
-
+    void subjectClick(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/subjects.fxml"));
+        stage.setTitle("Subjects");
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.width;
+        double height = screenSize.getHeight();
+        stage.setScene(new Scene(root, width-1, height-80));
+        stage.show();
     }
 
     @FXML
@@ -84,19 +113,17 @@ public class AdmindashboardController {
         stage.setScene(new Scene(root, width-1, height-80));
         stage.show();
     }
-    @FXML
-    void deleteButtonClicked(ActionEvent event) {
-
-    }
 
     @FXML
-    void addButtonClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void saveButtonClicked(ActionEvent event) {
-
+    void createSheduleClick(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/createShedule.fxml"));
+        stage.setTitle("Create shedule");
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.width;
+        double height = screenSize.getHeight();
+        stage.setScene(new Scene(root, width-10, height-80));
+        stage.show();
     }
 
 }

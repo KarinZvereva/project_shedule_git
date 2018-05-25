@@ -31,11 +31,11 @@ public class MainController {
                 l = true;
                 break;
             case "teacher":
-                item = "views/teacherdashboard.fxml";
+                item = "views/show_demo.fxml";
                 l = true;
                 break;
             case "student":
-                item = "views/studentdashboard.fxml";
+                item = "views/show_demo.fxml";
                 l = true;
                 break;
             default:
