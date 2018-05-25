@@ -11,9 +11,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.isu.math.zvereva.Controllers.MainController">
    <children>
-      <ImageView fitHeight="398.0" fitWidth="607.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="410.0" fitWidth="623.0">
          <image>
-            <Image url="@city.jpg" />
+            <Image url="@lyceum.JPG" />
          </image>
       </ImageView>
       <Pane layoutX="93.0" layoutY="60.0" opacity="0.43" prefHeight="303.0" prefWidth="362.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="30.0" />
