@@ -6,6 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import ru.isu.math.zvereva.RetrofitService;
+import ru.isu.math.zvereva.User;
+import ru.isu.math.zvereva.UserView;
+
+import java.io.IOException;
 
 public class AddUserController {
     @FXML
@@ -42,13 +48,39 @@ public class AddUserController {
     private TextField tlogin;
 
     @FXML
-    private Button exitButton;
+    private Button save;
 
     @FXML
     private PasswordField tpassword;
 
-    @FXML
-    void saveButtonClicked(ActionEvent event) {
+    User user = new User();
 
+    @FXML
+    void saveButtonClicked(ActionEvent event) throws IOException {
+        String user_name = tname.getText();
+        String user_surname = tsurname.getText();
+        String user_fathername = tfathername.getText();
+        int user_roleId = -1;
+        try {
+            user_roleId = Integer.parseInt(troleId.getText());
+        }
+
+        catch (Exception e) {
+            user_roleId = -1;
+        }
+
+        String user_login = tlogin.getText();
+        String user_password = tpassword.getText();
+
+        user = new User(0,user_roleId,user_name,user_surname,
+                user_fathername, user_login, user_password, 1);
+
+
+        RetrofitService.RetrofitBuild().addUser(user).execute();
+        UsersController.data.add(new UserView(user.getName(), user.getSurname(),
+                user.getFathername(), user.getLogin(), user.getRoleId(), user.getId(), user.getPassword()));
+
+        Stage stag = (Stage) save.getScene().getWindow();
+        stag.close();
     }
 }

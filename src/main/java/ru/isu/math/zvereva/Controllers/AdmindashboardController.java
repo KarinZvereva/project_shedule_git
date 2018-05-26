@@ -65,23 +65,12 @@ public class AdmindashboardController {
         stage.show();
     }
 
-    @FXML
-    void sheduleClick(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/shedule.fxml"));
-        stage.setTitle("Shedule");
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.width;
-        double height = screenSize.getHeight();
-        stage.setScene(new Scene(root, width-10, height-80));
-        stage.show();
-    }
 
 
     @FXML
     void classroomClick(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/classes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/cabinets.fxml"));
         stage.setTitle("Classes");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.width;
