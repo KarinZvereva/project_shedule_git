@@ -53,34 +53,57 @@ public class AddUserController {
     @FXML
     private PasswordField tpassword;
 
+    @FXML
+    private Label surnameEmpty;
+
+    @FXML
+    private Label namaEmpty;
+
+    @FXML
+    private Label loginEmpty;
+
+    @FXML
+    private Label passwordEmpty;
+
+
     User user = new User();
 
     @FXML
     void saveButtonClicked(ActionEvent event) throws IOException {
-        String user_name = tname.getText();
-        String user_surname = tsurname.getText();
-        String user_fathername = tfathername.getText();
-        int user_roleId = -1;
-        try {
-            user_roleId = Integer.parseInt(troleId.getText());
+
+        boolean check_surname = DataValidation.textFieldIsSurnameEmpty(tsurname,surnameEmpty,"Заполните поле 'Фамилия'. Цифры недопустимы.");
+        boolean check_name = DataValidation.textFieldIsNameEmpty( tname,namaEmpty,"Заполните поле 'Имя'. Цифры недопустимы.");
+        boolean check_login = DataValidation.textFieldIsloginEmpty(tlogin,loginEmpty,"Заполните поле 'Логин'.");
+        boolean check_password = DataValidation.textFieldIsPasswordEmpty(tpassword,passwordEmpty,"Заполните поле 'Пароль'.");
+
+        if(check_surname && check_name &&  check_login && check_password) {
+
+            String user_name = tname.getText();
+            String user_surname = tsurname.getText();
+            String user_fathername = tfathername.getText();
+            int user_roleId = -1;
+            try {
+                user_roleId = Integer.parseInt(troleId.getText());
+            } catch (Exception e) {
+                user_roleId = -1;
+            }
+
+            String user_login = tlogin.getText();
+            String user_password = tpassword.getText();
+
+            user = new User(0, user_roleId, user_name, user_surname,
+                    user_fathername, user_login, user_password, 1);
+
+
+            RetrofitService.RetrofitBuild().addUser(user).execute();
+            UsersController.data.add(new UserView(user.getName(), user.getSurname(),
+                    user.getFathername(), user.getLogin(), user.getRoleId(), user.getId(), user.getPassword()));
+
+            Stage stag = (Stage) save.getScene().getWindow();
+            stag.close();
         }
-
-        catch (Exception e) {
-            user_roleId = -1;
+        else{
+            System.out.println("Wrong");
         }
-
-        String user_login = tlogin.getText();
-        String user_password = tpassword.getText();
-
-        user = new User(0,user_roleId,user_name,user_surname,
-                user_fathername, user_login, user_password, 1);
-
-
-        RetrofitService.RetrofitBuild().addUser(user).execute();
-        UsersController.data.add(new UserView(user.getName(), user.getSurname(),
-                user.getFathername(), user.getLogin(), user.getRoleId(), user.getId(), user.getPassword()));
-
-        Stage stag = (Stage) save.getScene().getWindow();
-        stag.close();
     }
 }

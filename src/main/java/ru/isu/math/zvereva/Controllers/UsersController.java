@@ -50,6 +50,8 @@ public class UsersController {
     @FXML
     private TableColumn<UserView, String> columnPassword;
 
+
+
     @FXML
     private Button save;
 
@@ -82,12 +84,12 @@ public class UsersController {
         }
         usersTable.setItems(data);
 
-        /*usersTable.setOnMouseClicked(new ListViewHandler(){
+        usersTable.setOnMouseClicked(new ListViewHandler(){
             @Override
             public void handle(javafx.scene.input.MouseEvent event) {
                 UserView user = usersTable.getSelectionModel().getSelectedItem();
             }
-        });*/
+        });
 
 
 
@@ -114,7 +116,7 @@ public class UsersController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/add_user.fxml"));
         stage.setTitle("Add user");
-        stage.setScene(new Scene(root, 403, 381));
+        stage.setScene(new Scene(root, 403, 465));
         stage.show();
         usersTable.refresh();
     }
