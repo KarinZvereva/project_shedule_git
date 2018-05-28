@@ -18,7 +18,7 @@ import retrofit2.Response;
 import ru.isu.math.zvereva.RetrofitService;
 import ru.isu.math.zvereva.User;
 import ru.isu.math.zvereva.UserService;
-import ru.isu.math.zvereva.UserView;
+import ru.isu.math.zvereva.viewsModel.UserView;
 import javafx.scene.control.Button;
 import java.io.IOException;
 import java.util.List;

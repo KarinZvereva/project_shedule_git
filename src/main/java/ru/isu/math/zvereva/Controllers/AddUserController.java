@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import ru.isu.math.zvereva.RetrofitService;
 import ru.isu.math.zvereva.User;
-import ru.isu.math.zvereva.UserView;
+import ru.isu.math.zvereva.viewsModel.UserView;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package ru.isu.math.zvereva;
+package ru.isu.math.zvereva.viewsModel;
 
 
 import javafx.beans.property.IntegerProperty;
